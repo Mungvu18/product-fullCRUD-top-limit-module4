@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Thêm mới sản phẩm</h1>
+<form method="post" th:object="${product}" enctype="multipart/form-data">
+    <input type="text" th:field="*{name}" ><br>
+    <input type="text" th:field="*{price}" ><br>
+    <input type="text" th:field="*{amount}" ><br>
+    <input type="file" th:name="${product.avatar}" th:id="${product.avatar}" ><br>
+    <input type="text" th:field="*{dateTime}"><br>
+    <select th:field="*{category}">
+        <th:block th:each="c:${categories}">
+            <option th:value="${c.id}" th:text="${c.name}"></option>
+        </th:block>
+    </select>
+    <input type="submit" value="Edit">
+</form>
+</body>
+</html>

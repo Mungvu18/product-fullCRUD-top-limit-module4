@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh sách sản phẩm</h1>
+<h1><a th:href="@{'/products/create'}">Add new product</a></h1>
+<h1>Tìm kiếm theo category</h1>
+<form action="search" method="post">
+    <select name="categories">
+        <th:block th:each="c:${categories}">
+            <option th:value="${c.id}" th:text="${c.name}"></option>
+        </th:block>
+    </select>
+</form>
+<table border="1px">
+    <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Amount</th>
+    <th>Image</th>
+    <th>DateTime</th>
+    <th>Category</th>
+        <th colspan="2">Action</th>
+    </tr>
+    <th:block th:each="p:${list}">
+        <tr>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.price}"></td>
+        <td th:text="${p.amount}"></td>
+        <td><img th:src="@{'/i/'+${p.image}}" width="100px"></td>
+        <td th:text="${p.dateTime}"></td>
+        <td th:text="${p.category.getName()}"></td>
+            <td><a th:href="@{/products/edit(id=${p.getId()})}">Edit</a></td>
+            <td><a onclick="return confirm('Are you sure?')" th:href="@{/products/delete(id=${p.id})}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+<h3><a th:href="@{'/products'(page=${list.number - 1})}" th:if="${list.hasPrevious()}">Previous</a>
+<span th:text="${list.number + 1}"></span>/<span th:text="${list.totalPages}"></span>
+<a th:href="@{'/products'(page=${list.number + 1})}" th:if="${list.hasNext()}">Next</a>
+</h3>
+</body>
+</html>
