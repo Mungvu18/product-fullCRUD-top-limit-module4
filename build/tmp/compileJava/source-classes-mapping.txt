@@ -1,0 +1,22 @@
+product/service/category/CategoryService.java
+ product.service.category.CategoryService
+product/service/Product/ProductService.java
+ product.service.Product.ProductService
+product/repository/CategoryRepository.java
+ product.repository.CategoryRepository
+product/model/Category.java
+ product.model.Category
+product/service/category/ICategoryServie.java
+ product.service.category.ICategoryServie
+product/service/Product/IProductService.java
+ product.service.Product.IProductService
+product/repository/ProductRepository.java
+ product.repository.ProductRepository
+product/config/AppConfiguration.java
+ product.config.AppConfiguration
+product/model/Product.java
+ product.model.Product
+product/config/AppInit.java
+ product.config.AppInit
+product/controller/ProductController.java
+ product.controller.ProductController
