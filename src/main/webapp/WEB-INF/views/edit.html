@@ -10,7 +10,8 @@
     <input type="text" th:field="*{name}" ><br>
     <input type="text" th:field="*{price}" ><br>
     <input type="text" th:field="*{amount}" ><br>
-    <input type="file" th:name="${product.avatar}" th:id="${product.avatar}" ><br>
+    <img th:src="@{'/i/'+${product.image}}">
+    <input type="file" th:field="*{avatar}" ><br>
     <input type="text" th:field="*{dateTime}"><br>
     <select th:field="*{category}">
         <th:block th:each="c:${categories}">

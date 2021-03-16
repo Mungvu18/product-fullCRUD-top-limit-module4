@@ -1,5 +1,5 @@
-product/config/AppConfiguration.java
- product.config.AppConfiguration
+product/controller/ProductController.java
+ product.controller.ProductController
 product/model/Product.java
  product.model.Product
 product/repository/CategoryRepository.java
@@ -18,5 +18,7 @@ product/service/category/CategoryService.java
  product.service.category.CategoryService
 product/service/Product/IProductService.java
  product.service.Product.IProductService
-product/controller/ProductController.java
- product.controller.ProductController
+product/config/AppConfiguration.java
+ product.config.AppConfiguration
+product/controller/RestControllerProduct.java
+ product.controller.RestControllerProduct
